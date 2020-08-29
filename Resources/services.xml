@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="HeptacomZammadTicketsFromOrders\Commands\TransferCustomers">
+            <tag name="console.command"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\CustomerIterator" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\TransferCustomer" type="service"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Commands\TransferOrders">
+            <tag name="console.command"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\OrderIterator" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\TransferOrder" type="service"/>
+        </service>
+
+        <service id="HeptacomZammadTicketsFromOrders\Services\Configuration">
+            <argument id="shopware.plugin.cached_config_reader" type="service"/>
+            <argument>%heptacom_zammad_tickets_from_orders.plugin_name%</argument>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\CustomerIterator">
+            <argument id="dbal_connection" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\Configuration" type="service"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\OrderIterator">
+            <argument id="dbal_connection" type="service"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\TransferCustomer">
+            <argument id="HeptacomZammadTicketsFromOrders\Services\ZammadHttpClient" type="service"/>
+            <argument id="shopware_attribute.data_persister" type="service"/>
+            <argument id="dbal_connection" type="service"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\TransferGroup">
+            <argument id="HeptacomZammadTicketsFromOrders\Services\ZammadHttpClient" type="service"/>
+            <argument type="service" id="HeptacomZammadTicketsFromOrders\Services\Configuration"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\TransferOrder">
+            <argument id="HeptacomZammadTicketsFromOrders\Services\TransferGroup" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\TransferTicketPriority" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\TransferTicketState" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\ZammadHttpClient" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\Configuration" type="service"/>
+            <argument id="shopware_attribute.data_persister" type="service"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\TransferTicketPriority">
+            <argument id="HeptacomZammadTicketsFromOrders\Services\ZammadHttpClient" type="service"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\TransferTicketState">
+            <argument id="HeptacomZammadTicketsFromOrders\Services\ZammadHttpClient" type="service"/>
+            <argument type="service" id="HeptacomZammadTicketsFromOrders\Services\Configuration"/>
+        </service>
+        <service id="HeptacomZammadTicketsFromOrders\Services\ZammadHttpClient">
+            <argument id="http_client" type="service"/>
+            <argument id="HeptacomZammadTicketsFromOrders\Services\Configuration" type="service"/>
+            <argument id="heptacom_zammad_tickets_from_orders.logger" type="service"/>
+        </service>
+    </services>
+</container>

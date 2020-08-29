@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.6/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="text" scope="shop">
+            <name>base_url</name>
+            <label lang="de">Zammad URL</label>
+            <label lang="en">Zammad URL</label>
+            <value>https://zammad.test</value>
+        </element>
+        <element type="password" scope="shop">
+            <name>api_token</name>
+            <label lang="de">Zammad Zugangsschlüssel</label>
+            <label lang="en">Zammad API Token</label>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_subject</name>
+            <label lang="de">Ticketbetreffformat</label>
+            <label lang="en">Ticket subject format</label>
+            <value>Bestellung %1$s vom %2$s</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_date_format</name>
+            <label lang="de">Ticketdatumsformat</label>
+            <label lang="en">Ticket date format</label>
+            <value>d.m.Y \u\m H:i</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_button_url_format</name>
+            <label lang="de">Ticketschaltflächenzielformat</label>
+            <label lang="en">Ticket button URL format</label>
+            <value>https://shopware-5.test/backend/?c=order&amp;nr=%1$s</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>mail_to_format</name>
+            <label lang="de">Email-sendenformat</label>
+            <label lang="en">Mail to button URL format</label>
+            <value><![CDATA[%1$s?Subject=Ihr&nbsp;Ticket]]></value>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_button_text</name>
+            <label lang="de">Ticketschaltflächenbeschriftung</label>
+            <label lang="en">Ticket button label</label>
+            <value>Bestellung in Shopware öffnen</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_address_billing_label</name>
+            <label lang="de">Ticketrechnungsanschriftbeschriftung</label>
+            <label lang="en">Ticket billing address label</label>
+            <value>Rechnungsadresse</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_address_shipping_label</name>
+            <label lang="de">Ticketversandanschriftbeschriftung</label>
+            <label lang="en">Ticket shipping address label</label>
+            <value>Lieferadresse</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_payment_label</name>
+            <label lang="de">Ticketzahlungsartbeschriftung</label>
+            <label lang="en">Ticket payment type label</label>
+            <value>Zahlungsart</value>
+        </element>
+        <element type="number" scope="shop">
+            <name>ticket_state_id</name>
+            <label lang="de">Status des Tickets</label>
+            <label lang="en">Ticket state</label>
+        </element>
+        <element type="text" scope="shop">
+            <name>ticket_group_id</name>
+            <label lang="de">Ticket Gruppe</label>
+            <label lang="en">Ticket group</label>
+        </element>
+        <element type="boolean" scope="shop">
+            <name>test_mode</name>
+            <label lang="de">Testmodus</label>
+            <label lang="en">Testing mode</label>
+            <value>true</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>test_mode_email_like_pattern</name>
+            <label lang="de">Testmodusemailmuster</label>
+            <label lang="en">Test mode email like pattern</label>
+            <value>%@example.com</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>customer_time_range</name>
+            <label lang="de">Anmeldezeitraum für Übertragung</label>
+            <label lang="en">Login time range for transfer</label>
+            <value>P4W</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>customer_number_label</name>
+            <label lang="de">Kundennummer Beschriftung</label>
+            <label lang="en">Customer number label</label>
+            <value>Kundennumer</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>answer_customer_link_title</name>
+            <label lang="de">Titel für den Link um Kunden zu antworten</label>
+            <label lang="en">Title for link to answer a customer</label>
+            <value>Auf dieses Ticket antworten</value>
+        </element>
+    </elements>
+</config>

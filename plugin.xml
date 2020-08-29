@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.6/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="en">Zammad tickets from order</label>
+    <label lang="de">Zammad Tickets aus Bestellungen</label>
+    <version>1.0.0</version>
+    <copyright>HEPTACOM GmbH</copyright>
+    <author>HEPTACOM GmbH</author>
+    <link>https://www.heptacom.de/</link>
+    <license>Apache-2.0</license>
+    <compatibility minVersion="5.6.0"/>
+    <description lang="en"><![CDATA[
+        <ul>
+            <li>Connect to Zammad via API token</li>
+            <li>Transfer users via command</li>
+            <li>Transfer orders via command</li>
+            <li>Add compatibility to FriedmOpenSubApplication</li>
+        </ul>
+    ]]></description>
+    <description lang="de"><![CDATA[
+        <ul>
+            <li>Verbindung zu Zammad über Zugangsschlüssel</li>
+            <li>Kundenübertragung über Befehlszeilenkommando</li>
+            <li>Bestellungsübertragung über Befehlszeilenkommando</li>
+            <li>Kompatibilität für FriedmOpenSubApplication eingebaut</li>
+        </ul>
+    ]]></description>
+    <changelog version="1.0.0">
+        <changes lang="en"><![CDATA[
+            <ul>
+                <li>Connect to Zammad via API token</li>
+                <li>Transfer users via command</li>
+                <li>Transfer orders via command</li>
+                <li>Add compatibility to FriedmOpenSubApplication</li>
+            </ul>
+        ]]></changes>
+        <changes lang="de"><![CDATA[
+            <ul>
+                <li>Verbindung zu Zammad über Zugangsschlüssel</li>
+                <li>Kundenübertragung über Befehlszeilenkommando</li>
+                <li>Bestellungsübertragung über Befehlszeilenkommando</li>
+                <li>Kompatibilität für FriedmOpenSubApplication eingebaut</li>
+            </ul>
+        ]]></changes>
+    </changelog>
+</plugin>
